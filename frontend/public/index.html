@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="description"
+        content="Amal Academy - Educational platform for Syrian learners to improve skills and build brighter futures" />
+    <meta name="keywords" content="education, syria, learning, skills, courses, arabic, english, career" />
+    <meta name="author" content="Amal Academy" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://amalacademy.com/" />
+    <meta property="og:title" content="Amal Academy - أكاديمية الأمل" />
+    <meta property="og:description" content="منصة تعليمية للمتعلمين السوريين لتطوير المهارات وبناء مستقبل أفضل" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://amalacademy.com/" />
+    <meta property="twitter:title" content="Amal Academy - أكاديمية الأمل" />
+    <meta property="twitter:description" content="منصة تعليمية للمتعلمين السوريين لتطوير المهارات وبناء مستقبل أفضل" />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Google Fonts - Supporting Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/api/health" as="fetch" crossorigin="anonymous">
+
+    <title>Amal Academy - أكاديمية الأمل</title>
+
+    <style>
+        /* Critical CSS for initial load */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="ltr"] {
+            text-align: left;
+        }
+
+        /* Loading spinner */
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-text {
+            color: white;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide loading when app loads */
+        .app-loaded .loading-container {
+            display: none;
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .loading-spinner {
+                animation: none;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            body {
+                background-color: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+            <h1>JavaScript Required</h1>
+            <p>يتطلب JavaScript لتشغيل هذا التطبيق</p>
+            <p>This application requires JavaScript to run.</p>
+        </div>
+    </noscript>
+
+    <!-- Loading screen -->
+    <div class="loading-container" id="initial-loading">
+        <div style="text-align: center;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">أكاديمية الأمل</div>
+            <div class="loading-text" style="font-size: 14px; opacity: 0.8;">Amal Academy</div>
+        </div>
+    </div>
+
+    <div id="root"></div>
+
+    <!-- Remove loading screen when React loads -->
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const loading = document.getElementById('initial-loading');
+                if (loading) {
+                    loading.style.opacity = '0';
+                    loading.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => loading.remove(), 500);
+                }
+                document.body.classList.add('app-loaded');
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

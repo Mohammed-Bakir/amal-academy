@@ -1,0 +1,17 @@
+{
+    "name": "Amal Academy - أكاديمية الأمل",
+    "short_name": "Amal Academy",
+    "description": "Educational platform for Syrian learners",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#2563eb",
+    "background_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        }
+    ]
+}
