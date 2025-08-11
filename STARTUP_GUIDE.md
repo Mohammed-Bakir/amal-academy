@@ -68,7 +68,7 @@ Visit: http://localhost:5003/health
 ```env
 NODE_ENV=development
 PORT=5003
-MONGODB_URI=mongodb+srv://Mohammed:Moh-Bakir-123@mohammed-cluster.7yuqfka.mongodb.net/amal-academy
+MONGODB_URI= (Your MongoDB URI here)
 JWT_SECRET=amal-academy-super-secret-jwt-key-2024
 JWT_EXPIRE=7d
 FRONTEND_URL=http://localhost:3000
