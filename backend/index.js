@@ -167,7 +167,7 @@ app.use('*', (req, res) => {
 // Database connection
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Mohammed:Moh-Bakir-123@mohammed-cluster.7yuqfka.mongodb.net/');
+        const conn = await mongoose.connect(process.env.MONGODB_URI);
 
         console.log(`🎓 MongoDB Connected: ${conn.connection.host}`);
         console.log(`📚 Database: ${conn.connection.name}`);
