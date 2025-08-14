@@ -22,8 +22,5 @@ Amal Academy is an educational streaming platform designed to help Syrians impro
 - **Authentication**: JWT-based auth system
 - **Deployment**: Production-ready setup
 
-## Getting Started
-This platform is built with love and hope for the Syrian community. Every line of code is written with the intention of creating opportunities and empowering learners.
-
 ---
 *"Amal" means "Hope" in Arabic - and that's exactly what this platform represents.*
